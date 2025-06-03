@@ -7,6 +7,10 @@ import Home from "../src/Pages/Home/Home";
 import UpcomingEvents from "../src/Pages/UpcomingEvents/UpcomingEvents";
 import Register from "../src/Pages/Register/Register";
 import Login from "../src/Pages/Login/Login";
+import CreateEvent from "../src/Pages/CreateEvent/CreateEvent";
+import PrivateRoute from "../src/Private/PrivateRoute";
+import ManageEvents from "../src/Pages/ManageEvents/ManageEvents";
+import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
  export const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +29,15 @@ import Login from "../src/Pages/Login/Login";
         },{
             path:"/login",
             element:<Login></Login>
+        },{
+            path:"/create-event",
+            element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>
+        },{
+            path:"/manage-events",
+            element:<PrivateRoute><ManageEvents></ManageEvents></PrivateRoute>
+        },{
+            path:"/joined-events",
+            element:<PrivateRoute><JoinedEvents></JoinedEvents></PrivateRoute>
         }
     ]
   },
