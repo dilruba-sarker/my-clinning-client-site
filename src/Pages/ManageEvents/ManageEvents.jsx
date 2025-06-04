@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
 import { Link } from 'react-router';
+import UpdateEvent from '../../Components/UpdateEvent/UpdateEvent';
 
 
 const ManageEvents = () => {
@@ -22,20 +23,21 @@ const ManageEvents = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 {events.map(data=>
 
-     <div className="card bg-base-100 w-72 shadow-sm">
+     <div key={data._id} className="card bg-base-100 w-72 shadow-sm">
+     
                       <figure>
                         <img
                         className='h-36 w-full'
                           src={data.image}
-                          alt="Shoes" />
+                           />
                       </figure>
                       <div className="card-body">
                         <h2 className="card-title">
                     {data.title}
                          
                         </h2>
-                         <div className="">Type: {data.type}</div>
-                         <div className="">Location: {data.location}</div>
+                         <div className="text-xl">Type: {data.type}</div>
+                         <div className="text-xl">Location: {data.location}</div>
                         <div>{data.description}</div>
                    
                   

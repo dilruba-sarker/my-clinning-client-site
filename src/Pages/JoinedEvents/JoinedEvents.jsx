@@ -19,10 +19,10 @@ const JoinedEvents = () => {
             <h1>Joined Events:{events.length}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
-                events.map(data=>
+                events.map((data,idx)=>
 
 
-                     <div className="card bg-base-100 w-72 shadow-sm">
+                     <div key={idx} className="card bg-base-100 w-72 shadow-sm">
                       <figure>
                         <img
                         className='h-36 w-full'
