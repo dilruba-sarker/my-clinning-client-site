@@ -11,6 +11,7 @@ import CreateEvent from "../src/Pages/CreateEvent/CreateEvent";
 import PrivateRoute from "../src/Private/PrivateRoute";
 import ManageEvents from "../src/Pages/ManageEvents/ManageEvents";
 import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
+import CardDetails from "../src/Pages/UpcomingEvents/CardDetails";
  export const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,12 @@ import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
             element:<UpcomingEvents></UpcomingEvents>,
             // loader:()=>fetch(`${import.meta.env.VITE_API_URL}/roads`)
         },{
+path:'/UpcomingEvents/:id',
+element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/roads/${params.id}`)
+        },
+        
+        {
             path:"/register",
             element:<Register></Register>
         },{
@@ -38,7 +45,8 @@ import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
             element:<PrivateRoute><ManageEvents></ManageEvents></PrivateRoute>
         },{
             path:"/joined-events",
-            element:<PrivateRoute><JoinedEvents></JoinedEvents></PrivateRoute>
+            element:<PrivateRoute><JoinedEvents></JoinedEvents></PrivateRoute>,
+            
         }
     ]
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 
 
@@ -34,7 +35,10 @@ email
      <div className="">Location: {location}</div>
     <div>{description}</div>
     <p>Date: {formatDate(date)}</p>
+      
+      <Link to={`/UpcomingEvents/${_id}`}>
       <div className="btn btn-primary">View event</div>
+      </Link>
     </div>
   </div>
 
