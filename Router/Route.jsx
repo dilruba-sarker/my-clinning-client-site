@@ -22,7 +22,8 @@ import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
           element:<Home></Home>
         },{
             path:'/UpcomingEvents',
-            element:<UpcomingEvents></UpcomingEvents>
+            element:<UpcomingEvents></UpcomingEvents>,
+            // loader:()=>fetch(`${import.meta.env.VITE_API_URL}/roads`)
         },{
             path:"/register",
             element:<Register></Register>
