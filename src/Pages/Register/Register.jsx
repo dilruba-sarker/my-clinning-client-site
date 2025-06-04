@@ -3,11 +3,12 @@ import { AuthContext } from '../../Context/AuthContext';
 
 
 
-import { Link } from 'react-router';
+import { Link, useNavigate, useLocation } from 'react-router';
 import Swal from 'sweetalert2';
 const Register = () => {
  const {createUser,updateUser,user,setUser,googleSignin}=use(AuthContext)
-
+ const navigate=useNavigate()
+    const location=useLocation()
 
 
 const handleSubmit=e=>{
@@ -48,6 +49,7 @@ updateUser(profile)
   text: "signup done sucessfully!!",
   icon: "success"
 });
+ setTimeout(()=>{navigate(`${location?.state?location?.state:"/"}`)},1000)
 form.reset('')
     }).catch(err=>{
       console.log(err.message);
@@ -70,6 +72,7 @@ const handleGoogle=()=>{
   text: "signup done sucessfully!!",
   icon: "success"
 });
+ setTimeout(()=>{navigate(`${location?.state?location?.state:"/"}`)},1000)
   }).catch(err=>{
       Swal.fire({
   title: "Opps?",

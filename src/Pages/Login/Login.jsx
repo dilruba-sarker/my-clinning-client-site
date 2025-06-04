@@ -31,7 +31,7 @@ const handleSubmit=e=>{
       icon: "success"
     });
      
-     setTimeout(()=>{navigate(`${location?.state?location?.state:"/"}`)},2000)
+     setTimeout(()=>{navigate(`${location?.state?location?.state:"/"}`)},1000)
     form.reset('')
         }).catch(err=>{
           console.log(err.message);

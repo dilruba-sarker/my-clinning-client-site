@@ -23,7 +23,7 @@ const ManageEvents = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 {events.map(data=>
 
-     <div key={data._id} className="card bg-base-100 w-72 shadow-sm">
+     <div key={data._id} className="card bg-neutral-content text-black w-72 shadow-sm">
      
                       <figure>
                         <img

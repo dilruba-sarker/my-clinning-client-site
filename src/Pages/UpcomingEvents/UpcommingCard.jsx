@@ -19,7 +19,7 @@ email
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
     return (
-        <div className="card bg-base-100 w-72 shadow-sm">
+        <div className="card bg-neutral-content text-black w-72 shadow-sm">
   <figure>
     <img
     className='h-36 w-full'
