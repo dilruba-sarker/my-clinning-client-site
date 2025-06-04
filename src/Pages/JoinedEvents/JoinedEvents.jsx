@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
+import { Link } from 'react-router';
 
 const JoinedEvents = () => {
     const [events,setEvents]=useState([])
@@ -38,11 +39,12 @@ const JoinedEvents = () => {
                         <div>{data.description}</div>
                    
                   
-                     <p>{new Date(data.date).toDateString()}</p>
+         
                           
+                         <p>Date: {new Date(data.date).toDateString()}</p>
                         
                         
-                         
+                         {/* <Link to={`/update/${data._id}`}>  <button className='btn btn-primary'>Update</button></Link> */}
                         </div>
                       </div>
                     

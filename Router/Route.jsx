@@ -12,6 +12,7 @@ import PrivateRoute from "../src/Private/PrivateRoute";
 import ManageEvents from "../src/Pages/ManageEvents/ManageEvents";
 import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
 import CardDetails from "../src/Pages/UpcomingEvents/CardDetails";
+import UpdateEvent from "../src/Components/UpdateEvent/UpdateEvent";
  export const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +48,9 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/roads/${params.id}`)
             path:"/joined-events",
             element:<PrivateRoute><JoinedEvents></JoinedEvents></PrivateRoute>,
             
+        },{
+            path:'update/:id',
+            element:<UpdateEvent></UpdateEvent>
         }
     ]
   },
