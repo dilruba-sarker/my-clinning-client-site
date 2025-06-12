@@ -6,10 +6,12 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from '../../Context/AuthContext';
-import axios from 'axios';
+
 import toast, { Toaster } from 'react-hot-toast';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 const CreateEvent = () => {
     const {user}=use(AuthContext)
+     const axiosSecure=useAxiosSecure()
  const [startDate, setStartDate] = useState(new Date());
     const handleSubmit=e=>{
         e.preventDefault()
@@ -33,7 +35,7 @@ const form = e.target;
 
   
    
-axios.post(`${import.meta.env.VITE_API_URL}/roads`, eventData)
+axiosSecure.post(`/roads`, eventData)
     .then(res => {
         console.log(res.data);
         if(res.data.insertedId

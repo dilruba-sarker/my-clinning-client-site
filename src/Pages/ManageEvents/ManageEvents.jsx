@@ -1,60 +1,51 @@
-import React, { use, useEffect, useState } from 'react';
-import { AuthContext } from '../../Context/AuthContext';
-import axios from 'axios';
-import { Link } from 'react-router';
-import UpdateEvent from '../../Components/UpdateEvent/UpdateEvent';
-
+import React, { use, useEffect, useState } from "react";
+import { AuthContext } from "../../Context/AuthContext";
+import axios from "axios";
+import { Link } from "react-router";
+import UpdateEvent from "../../Components/UpdateEvent/UpdateEvent";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ManageEvents = () => {
+  const [events, setEvents] = useState([]);
+  const { user } = use(AuthContext);
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    axiosSecure(
+      `${import.meta.env.VITE_API_URL}/my-roads?email=${user.email}`
+    ).then((res) => {
+      setEvents(res.data);
+    });
+  }, [axiosSecure, user.email]);
+  return (
+    <div>
+      <h1>all my my events {events.length}</h1>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {events.map((data) => (
+          <div
+            key={data._id}
+            className="card bg-neutral-content text-black w-72 shadow-sm"
+          >
+            <figure>
+              <img className="h-36 w-full" src={data.image} />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{data.title}</h2>
+              <div className="text-xl">Type: {data.type}</div>
+              <div className="text-xl">Location: {data.location}</div>
+              <div>{data.description}</div>
 
-     const [events,setEvents]=useState([])
-        const {user}=use(AuthContext)
-        useEffect(()=>{
-            axios.get(`${import.meta.env.VITE_API_URL}/my-roads?email=${user.email}`)
-            .then(res=>{
-                setEvents(res.data);
-            })
-        },[user.email])
-    return (
-        <div>
-            <h1>all my my events {events.length}</h1>
+              <p>Date: {new Date(data.date).toDateString()}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-{events.map(data=>
-
-     <div key={data._id} className="card bg-neutral-content text-black w-72 shadow-sm">
-     
-                      <figure>
-                        <img
-                        className='h-36 w-full'
-                          src={data.image}
-                           />
-                      </figure>
-                      <div className="card-body">
-                        <h2 className="card-title">
-                    {data.title}
-                         
-                        </h2>
-                         <div className="text-xl">Type: {data.type}</div>
-                         <div className="text-xl">Location: {data.location}</div>
-                        <div>{data.description}</div>
-                   
-                  
-                     <p>Date: {new Date(data.date).toDateString()}</p>
-                          
-                        
-                          
-                            <Link to={`/update/${data._id}`}><button className="btn btn-neutral mt-4">Update Event</button> </Link>
-                        </div>
-                      </div>
-                    
-                
-)}
-
+              <Link to={`/update/${data._id}`}>
+                <button className="btn btn-neutral mt-4">Update Event</button>{" "}
+              </Link>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default ManageEvents;

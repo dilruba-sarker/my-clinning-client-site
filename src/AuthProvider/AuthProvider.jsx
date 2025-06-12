@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 const provider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
@@ -35,6 +36,7 @@ const AuthProvider = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
+      localStorage.removeItem('token')
     return signOut(auth);
   };
   const authInfo = {
@@ -52,6 +54,13 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const disconnect = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if(currentUser?.email){
+
+         axios.post(`${import.meta.env.VITE_API_URL}/jwt`,{
+        email:currentUser?.email})
+        .then(res=>localStorage.setItem("token",res.data.token))
+      }
+     
       console.log("User status changed:", currentUser);
       setLoading(false);
     });

@@ -1,17 +1,26 @@
-import axios from 'axios';
+
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import { Link } from 'react-router';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const JoinedEvents = () => {
     const [events,setEvents]=useState([])
     const {user}=use(AuthContext)
+    const axiosSecure=useAxiosSecure()
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_API_URL}/events?email=${user.email}`)
+        // const token=localStorage.getItem('token')
+        axiosSecure(`/events?email=${user.email}`
+        //     ,{
+        //     headers:{
+        //         Authorization:`Bearer ${token}`
+        //     }
+        // }
+    )
         .then(res=>{
             setEvents(res.data);
         })
-    },[user.email])
+    },[axiosSecure, user.email])
 
     console.log(events);
     return (
