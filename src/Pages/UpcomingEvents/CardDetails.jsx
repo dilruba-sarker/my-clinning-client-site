@@ -3,9 +3,11 @@ import React, { use } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthContext';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const CardDetails = () => {
 const {id:EventId}=useParams()
+ const axiosSecure=useAxiosSecure()
     const data=useLoaderData()
     const {user}=use(AuthContext)
     console.log(data);
@@ -21,7 +23,7 @@ const {id:EventId}=useParams()
     }
     const handleEvent=()=>{
 
-        axios.post(`${import.meta.env.VITE_API_URL}/events`,eventData )
+       axiosSecure.post(`${import.meta.env.VITE_API_URL}/events`,eventData )
         .then(res=>{
             console.log(res.data);
             if(res.data.insertedId){
