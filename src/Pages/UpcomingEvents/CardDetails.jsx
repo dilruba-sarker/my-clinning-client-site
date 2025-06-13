@@ -40,7 +40,7 @@ const {id:EventId}=useParams()
     }
     return (
         <div>
-            <h1>details</h1>
+         
             <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row">
     <img

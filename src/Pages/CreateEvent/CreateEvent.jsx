@@ -9,9 +9,12 @@ import { AuthContext } from '../../Context/AuthContext';
 
 import toast, { Toaster } from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useNavigate } from 'react-router';
+
 const CreateEvent = () => {
     const {user}=use(AuthContext)
      const axiosSecure=useAxiosSecure()
+     const navigate=useNavigate()
  const [startDate, setStartDate] = useState(new Date());
     const handleSubmit=e=>{
         e.preventDefault()
@@ -41,8 +44,10 @@ axiosSecure.post(`/roads`, eventData)
         if(res.data.insertedId
 ){
 
-  toast.success('data inserted Successfully !')
+  toast.success('Event Created Successfully !')
   form.reset();
+  
+     setTimeout(()=>{navigate('/UpcomingEvents')},1000)
 }
     })
     .catch(err => console.log(err.message))
@@ -61,24 +66,25 @@ axiosSecure.post(`/roads`, eventData)
       <div className="card-body">
         <form onSubmit={handleSubmit} className="form">
           <label className="label">Title</label>
-          <input type="text" name='title' className="input" placeholder="title" />
+          <input required type="text" name='title' className="input" placeholder="title" />
           <label className="label">Description</label>
-          <input type="text" name='description' className="input" placeholder="description" />
-          <label className="label">Event type</label>
-          <select defaultValue="Pick Event type" name='type' className="select">
-  <option disabled={true}>Pick Event type</option>
-  <option>Cleanup</option>
-  <option>Plantation</option>
-  <option>Donation</option>
+          <input type="text" name='description' required className="input" placeholder="description" />
+         <label className="label">Event type</label>
+<select name="type" required defaultValue="" className="select">
+  <option value="" disabled>Pick Event type</option>
+  <option value="Cleanup">Cleanup</option>
+  <option value="Plantation">Plantation</option>
+  <option value="Donation">Donation</option>
 </select>
           <label className="label">Thumbnail Image URL</label>
-          <input type="text" name='image' className="input" placeholder="thumbnail Image URL" />
+          <input type="text" name='image' className="input" required placeholder="thumbnail Image URL" />
           <label className="label">Location</label>
-          <input type="text" name='location' className="input" placeholder="location" />
+          <input type="text" name='location' required className="input" placeholder="location" />
           <label className="label" name="date"> Event date</label>
           
           <DatePicker
                   selected={startDate}
+                  required
                   onChange={(date) => setStartDate(date)}
                   className="input w-full" // This makes it look like your other inputs
                   dateFormat="MMMM d, yyyy" // Customize date format

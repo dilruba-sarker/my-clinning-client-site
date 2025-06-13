@@ -173,6 +173,7 @@ const UpdateEvent = () => {
                 <input
                   type="text"
                   defaultValue={eventData.title}
+                  required
                   name="title"
                   className="input"
                   placeholder="title"
@@ -181,27 +182,26 @@ const UpdateEvent = () => {
                 <label className="label">Description</label>
                 <input
                   type="text"
+                  required
                   defaultValue={eventData.description}
                   name="description"
                   className="input"
                   placeholder="description"
                 />
 
-                <label className="label">Event type</label>
-                <select
-                  defaultValue={eventData.type}
-                  name="type"
-                  className="select"
-                >
-                  <option disabled>Pick Event type</option>
-                  <option>Cleanup</option>
-                  <option>Plantation</option>
-                  <option>Donation</option>
-                </select>
+               <label className="label">Event type</label>
+<select name="type" required defaultValue="" className="select">
+  <option value="" disabled>Pick Event type</option>
+  <option value="Cleanup">Cleanup</option>
+  <option value="Plantation">Plantation</option>
+  <option value="Donation">Donation</option>
+</select>
+
 
                 <label className="label">Thumbnail Image URL</label>
                 <input
                   type="text"
+                  required
                   defaultValue={eventData.image}
                   name="image"
                   className="input"
@@ -213,6 +213,7 @@ const UpdateEvent = () => {
                   type="text"
                   defaultValue={eventData.location}
                   name="location"
+                  required
                   className="input"
                   placeholder="location"
                 />
@@ -220,6 +221,7 @@ const UpdateEvent = () => {
                 <label className="label" htmlFor="date">Event date</label>
                 <DatePicker
                   selected={startDate}
+                  required
                   onChange={date => setStartDate(date)}
                   className="input w-full"
                   dateFormat="MMMM d, yyyy"
