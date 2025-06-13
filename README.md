@@ -1,12 +1,48 @@
-# React + Vite
+# RecruitConnect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Live Site
+[https://recruitconnect.web.app](https://recruitconnect.web.app)
 
-Currently, two official plugins are available:
+## 🎯 Purpose
+RecruitConnect is a modern, responsive recruitment platform that helps recruiters easily find and manage suitable candidates. It is designed to be intuitive, visually appealing, and efficient across all devices—mobile, tablet, and desktop. This project emphasizes clean UI/UX with secure backend architecture using Firebase and MongoDB.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Recruiter and job seeker authentication using Firebase
+- Fully responsive layout (mobile, tablet, desktop)
+- Event and job post creation, joining, and update functionality
+- Personalized dashboard for recruiters
+- Secure Firebase and MongoDB integration using `.env` files
+- Attractive, recruiter-friendly UI with proper alignment, spacing, and eye-pleasing color contrast
+- Job filtering and searching system
+- JWT-based route protection
+- Express API with secure CRUD operations
+
+---
+
+## 📦 NPM Packages Used
+
+### Client-side:
+- **React** – Frontend library
+- **React Router** – Routing
+- **Tailwind CSS** – Styling
+- **DaisyUI** – Prebuilt UI components
+- **Axios** – API calls
+- **Firebase** – Authentication
+- **JWT Decode** – Handling token-based authentication
+
+### Server-side:
+- **Express.js** – Server framework
+- **Cors** – Cross-Origin Resource Sharing
+- **Dotenv** – Environment variable management
+- **MongoDB** – Database
+- **Jsonwebtoken** – JWT token generation and verification
+
+
+---
+
+
+
+
