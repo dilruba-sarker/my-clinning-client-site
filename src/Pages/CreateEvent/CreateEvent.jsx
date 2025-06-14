@@ -7,12 +7,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../../Context/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 
 const CreateEvent = () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [startDate, setStartDate] = useState(new Date());
   const [errors, setErrors] = useState({});
@@ -64,8 +64,8 @@ const CreateEvent = () => {
       .then(res => {
         if (res.data.insertedId) {
           toast.success('Event Created Successfully!');
-          form.reset();
-          setTimeout(() => navigate('/UpcomingEvents'), 1000);
+          // form.reset();
+          // setTimeout(() => navigate('/UpcomingEvents'), 1000);
         }
       })
       .catch(err => console.error(err));
