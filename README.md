@@ -4,7 +4,7 @@
 [https://b-11-assignment-11-client.web.app/](https://b-11-assignment-11-client.web.app/)
 
 ## 🎯 Purpose
-RecruitConnect is a modern, responsive recruitment platform that helps recruiters easily find and manage suitable candidates. It is designed to be intuitive, visually appealing, and efficient across all devices—mobile, tablet, and desktop. This project emphasizes clean UI/UX with secure backend architecture using Firebase and MongoDB.
+Social Development Events Platform, responsive website  It is designed to be intuitive, visually appealing, and efficient across all devices—mobile, tablet, and desktop. This project emphasizes clean UI/UX with secure backend architecture using Firebase and MongoDB.
 
 ---
 
@@ -12,11 +12,10 @@ RecruitConnect is a modern, responsive recruitment platform that helps recruiter
 
 - Recruiter and job seeker authentication using Firebase
 - Fully responsive layout (mobile, tablet, desktop)
-- Event and job post creation, joining, and update functionality
-- Personalized dashboard for recruiters
+
 - Secure Firebase and MongoDB integration using `.env` files
 - Attractive, recruiter-friendly UI with proper alignment, spacing, and eye-pleasing color contrast
-- Job filtering and searching system
+- filtering and searching system
 - JWT-based route protection
 - Express API with secure CRUD operations
 
