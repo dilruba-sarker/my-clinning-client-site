@@ -1,4 +1,4 @@
-# RecruitConnect
+# Social Development Events Platform
 
 ## 🌐 Live Site
 [https://b-11-assignment-11-client.web.app/](https://b-11-assignment-11-client.web.app/)
@@ -10,7 +10,7 @@ Social Development Events Platform, responsive website  It is designed to be int
 
 ## 🚀 Key Features
 
-- Recruiter and job seeker authentication using Firebase
+- Social Development Events website authentication using Firebase
 - Fully responsive layout (mobile, tablet, desktop)
 
 - Secure Firebase and MongoDB integration using `.env` files
