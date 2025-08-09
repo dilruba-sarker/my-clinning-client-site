@@ -46,7 +46,7 @@ const NewsLetter = () => {
           </div>
           <button
             type="submit"
-            className="bg-gradient-to-r from-orange-400 to-yellow-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
+            className="bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
           >
             SUBMIT &gt;
           </button>

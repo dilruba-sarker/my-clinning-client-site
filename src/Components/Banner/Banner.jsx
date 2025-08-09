@@ -106,6 +106,7 @@ import './Banner.css'; // Import the Swiper pagination styles
 
 import pic1 from '../../assets/clean.png';
 import pic2 from '../../assets/pic1.png';
+import { Link } from 'react-router';
 
 const events = [
   {
@@ -158,9 +159,11 @@ const Banner = () => {
                     {event.date} <br /> {event.location}
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <Link to="/register">
                     <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md transition-colors duration-300">
                       REGISTER NOW
                     </button>
+                    </Link>
                     <button className="px-6 py-3  bg-red-600 border-2 border-white hover:bg-white hover:text-black text-white font-medium rounded-md transition-colors duration-300">
                       WATCH VIDEO
                     </button>
