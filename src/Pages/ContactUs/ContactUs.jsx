@@ -50,10 +50,10 @@ export default function ContactUs() {
   return (
     <div>
       {/* Top Banner */}
-      <div className="bg-gradient-to-b from-gray-800 to-gray-700 text-white relative">
+      <div className="bg-gradient-to-b from-gray-800 to-gray-700 mt-8 text-white relative">
         <div className="max-w-6xl mx-auto px-4 py-14 flex flex-col items-center ">
          <div className="flex flex-col items-center">
-  <p className="text-xs tracking-widest mb-1">CONTACT US NOW</p>
+  <p className="text-xs tracking-widest mb-1 ">CONTACT US NOW</p>
   <h1 className="text-2xl font-bold">
     KEEP <span className="text-yellow-400">IN TOUCH</span>
   </h1>
@@ -68,11 +68,12 @@ export default function ContactUs() {
 
       {/* Form Section */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <p className="text-xs tracking-widest text-gray-500 mb-2">CONTACT US</p>
-        <h2 className="text-xl font-semibold mb-6">
-          Keep In Touch <strong>With ROAD CLEANING</strong>
-        </h2>
-
+       <div className="flex flex-col items-center mb-6">
+  <p className="text-xs tracking-widest mb-1">CONTACT US NOW</p>
+  <h1 className="text-2xl font-bold">
+    KEEP <span className="text-yellow-400 mb-4">IN TOUCH</span>
+  </h1>
+</div>
         <form
           className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"
           onSubmit={handleSubmit}
