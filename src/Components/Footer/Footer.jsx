@@ -6,23 +6,23 @@ const Footer = () => {
       <footer className="footer sm:footer-horizontal bg-gray-600 text-white p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Cleaning</a>
-    <a className="link link-hover">Tree Plantation</a>
-    <a className="link link-hover">Washing</a>
-    <a className="link link-hover">Advertisement</a>
+    <h1 className="">Cleaning</h1>
+    <h1 className="">Tree Plantation</h1>
+    <h1 className="">Washing</h1>
+    <h1 className="">Advertisement</h1>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Dhaka,12340,uxt</a>
+    <a className="">About us</a>
+    <a className="">Contact</a>
+    <a className="">Dhaka,12340,uxt</a>
    
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h1 className="">Terms of use</h1>
+    <h1 className="">Privacy policy</h1>
+    <h1 className="">Cookie policy</h1>
   </nav>
 
 </footer>
