@@ -48,11 +48,37 @@ const Navbar = () => {
           Register
         </NavLink>
       </li>
+      {user?.email?
+      <li>
+         <NavLink 
+          to="/aboutUs" 
+          className={({ isActive }) => 
+            `text-xl font-semibold hover:bg-blue-400 hover:text-white ${isActive ? 'text-blue-700' : 'text-blue-500'}`
+          }
+        >
+         About Us
+        </NavLink>
+      </li>
+   
+      :""}
+      {user?.email?
+      <li>
+         <NavLink 
+          to="/privacypolicy" 
+          className={({ isActive }) => 
+            `text-xl font-semibold hover:bg-blue-400 hover:text-white ${isActive ? 'text-blue-700' : 'text-blue-500'}`
+          }
+        >
+         Privacy Policy
+        </NavLink>
+      </li>
+   
+      :""}
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar max-w-full  bg-base-100 shadow-sm  fixed top-0 w-full  z-50">
       {/* Mobile menu */}
       <div className="navbar-start">
         <div className="dropdown">

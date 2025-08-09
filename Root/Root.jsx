@@ -8,9 +8,10 @@ import Footer from '../src/Components/Footer/Footer';
 
 const Root = () => {
     return (
-        <div className='max-w-5xl mx-auto'>
+        <div className=' mx-auto'>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+          
+            <div className='mt-20'>  <Outlet></Outlet> </div>
             <Footer></Footer>
         </div>
     );

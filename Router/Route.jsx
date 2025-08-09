@@ -13,10 +13,14 @@ import ManageEvents from "../src/Pages/ManageEvents/ManageEvents";
 import JoinedEvents from "../src/Pages/JoinedEvents/JoinedEvents";
 import CardDetails from "../src/Pages/UpcomingEvents/CardDetails";
 import UpdateEvent from "../src/Components/UpdateEvent/UpdateEvent";
+import AboutUs from "../src/Pages/AboutUs/AboutUs";
+import Privacypolicy from "../src/Pages/Privacypolicy/Privacypolicy";
+import ErrorPage from "../src/Pages/ErrorPage/ErrorPage";
  export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+      errorElement: <ErrorPage />,
     children:[
         {
             path:'/',
@@ -38,6 +42,13 @@ loader:({params})=>fetch(`${import.meta.env.VITE_API_URL}/roads/${params.id}`)
         },{
             path:"/login",
             element:<Login></Login>
+        },{
+            path:'/aboutUs',
+            element:<PrivateRoute><AboutUs></AboutUs></PrivateRoute>
+        },{
+        },{
+            path:'/privacypolicy',
+            element:<PrivateRoute><Privacypolicy></Privacypolicy></PrivateRoute>
         },{
             path:"/create-event",
             element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>
