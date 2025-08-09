@@ -8,10 +8,10 @@ import Footer from '../src/Components/Footer/Footer';
 
 const Root = () => {
     return (
-        <div className=' mx-auto'>
+        <div className='mx-auto overflow-x-hidden'>
             <Navbar></Navbar>
           
-            <div className='mt-20'>  <Outlet></Outlet> </div>
+            <div className='mt-20 overflow-x-hidden'>  <Outlet></Outlet> </div>
             <Footer></Footer>
         </div>
     );

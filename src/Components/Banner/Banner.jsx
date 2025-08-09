@@ -152,7 +152,7 @@ const Banner = () => {
             >
               <div className="absolute inset-0 bg-base bg-opacity-60 flex items-center justify-center">
                 <div className="text-center px-4 max-w-4xl mx-auto">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-400 mb-4">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white  mb-4">
                     {event.title}
                   </h1>
                   <p className="text-lg md:text-xl text-red-600 mb-6">
@@ -160,13 +160,15 @@ const Banner = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <Link to="/register">
-                    <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md transition-colors duration-300">
+                    <button className="px-6 py-3 btn btn-primary border-white hover:bg-white hover:text-black text-white font-medium rounded-md transition-colors duration-300">
                       REGISTER NOW
                     </button>
                     </Link>
-                    <button className="px-6 py-3  bg-red-600 border-2 border-white hover:bg-white hover:text-black text-white font-medium rounded-md transition-colors duration-300">
+                    <a href="https://www.youtube.com/">
+                    <button  className="px-6 py-3  btn btn-primary border-2 border-white hover:bg-white hover:text-black text-white font-medium rounded-md transition-colors duration-300">
                       WATCH VIDEO
                     </button>
+                    </a>
                   </div>
                 </div>
               </div>
